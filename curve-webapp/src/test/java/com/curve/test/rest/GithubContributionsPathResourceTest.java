@@ -1,6 +1,6 @@
 package com.curve.test.rest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.Optional;
 
@@ -44,6 +44,7 @@ public class GithubContributionsPathResourceTest extends JerseyTest {
     public void testGetIt() {
         ContributionPath responseMsg = target().path("contributionspath/shortest").request()
                 .get(ContributionPath.class);
-        assertEquals(12, responseMsg.getContributionPathLength());
+        assertTrue(responseMsg.getContributionPathLength().isPresent());
+        assertEquals(12, responseMsg.getContributionPathLength().get().intValue());
     }
 }
