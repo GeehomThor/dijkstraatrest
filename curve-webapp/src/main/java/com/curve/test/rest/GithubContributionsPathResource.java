@@ -10,6 +10,13 @@ import javax.ws.rs.core.Response;
 import com.curve.test.github.path.ContributionPath;
 import com.curve.test.github.path.ContributionPathSolver;
 
+
+/**
+ * 
+ * This end point is deployable to heroku (although I did not try it yet)
+ * The algorithm would surely need some improvement testing with a larger set of data (inc. caching)
+ *
+ */
 @Path("contributionspath")
 public class GithubContributionsPathResource {
 

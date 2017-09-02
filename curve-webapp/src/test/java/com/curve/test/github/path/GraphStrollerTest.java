@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.curve.test.github.proxy.JerseyClientProxy;
 
 
-//Additional test are need : to the limit and also some stress tests
+//Additional test are need : to the limit and also with larger set of data
 public class GraphStrollerTest {
 	
 	private JerseyClientProxy jerseyClientProxy;
