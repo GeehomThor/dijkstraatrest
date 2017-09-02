@@ -1,24 +1,26 @@
 package com.curve.test.github.path;
 
+import java.util.Optional;
+
 public class ContributionPath {
-	
-	private int contributionPathLength;
 
-	public ContributionPath() {
-		super();
-	}
+    private Optional<Integer> contributionPathLength;
 
-	public ContributionPath(int contributionPathLength) {
-		super();
-		this.contributionPathLength = contributionPathLength;
-	}
+    public ContributionPath() {
+        super();
+    }
 
-	public int getContributionPathLength() {
-		return contributionPathLength;
-	}
+    public ContributionPath(Optional<Integer> contributionPathLength) {
+        super();
+        this.contributionPathLength = contributionPathLength;
+    }
 
-	public void setContributionPathLength(int contributionPathLength) {
-		this.contributionPathLength = contributionPathLength;
-	}
+    public Optional<Integer> getContributionPathLength() {
+        return contributionPathLength;
+    }
+
+    public void setContributionPathLength(Optional<Integer> contributionPathLength) {
+        this.contributionPathLength = contributionPathLength;
+    }
 
 }
