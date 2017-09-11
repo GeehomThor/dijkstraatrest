@@ -21,7 +21,8 @@ public class GithubJerseyClientProxy implements JerseyClientProxy {
     @Override
     public List<String> getUserRepos(String user) {
 
-        JsonArray response = client.target(String.format("https://api.github.com/users/%s/repos", user)).request()
+        JsonArray response = client.target(String.format("https://api.github.com/users/%s/repos", user))
+                .queryParam("client_id", "geehomThor").queryParam("client_id", "geehomThor").request()
                 .get(JsonArray.class);
 
         return response.stream().map(jsonValue -> jsonValue.asJsonObject().getString("name"))

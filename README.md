@@ -8,3 +8,6 @@ Then the shortest distance between them is one and goes through the algorithmics
 Given we have three users (user1, user2 and user3) and two repositories (repository1, repository2).
 When User1 contributes to repository1, User2 contributed to repository1 and repository2, and User3 contribute to repository2.
 Then the shortest path between User1 and User3 will equal 2 and it will go through repository1 and repository2.
+
+
+We can run the application locally by simply running mvn clean package jetty:run

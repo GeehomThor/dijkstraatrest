@@ -3,18 +3,22 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         version="3.0">
 
-    <servlet>
-        <servlet-name>Jersey Web Application</servlet-name>
+	<servlet>
+        <servlet-name>githubshortestpath</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-        <init-param>
+<!--         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.github.dijkstra</param-value>
+            <param-value>com.github.dijkstra.resources</param-value>
+        </init-param> -->
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.github.dijkstra.application.GithubSortestPathApplication</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Jersey Web Application</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <servlet-name>githubshortestpath</servlet-name>
+        <url-pattern>/githubshortestpath/*</url-pattern>
     </servlet-mapping>
     
 </web-app>

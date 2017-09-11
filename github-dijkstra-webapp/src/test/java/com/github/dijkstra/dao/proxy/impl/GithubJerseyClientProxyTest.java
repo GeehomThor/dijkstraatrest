@@ -1,13 +1,11 @@
 package com.github.dijkstra.dao.proxy.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
 import org.junit.Before;
-import org.junit.Test;
-
-import com.github.dijkstra.dao.proxy.impl.GithubJerseyClientProxy;
+import org.junit.Ignore;
 
 public class GithubJerseyClientProxyTest {
 
@@ -18,16 +16,16 @@ public class GithubJerseyClientProxyTest {
         jerseyClient = new GithubJerseyClientProxy();
     }
 
-    @Test
+    @Ignore
     public void testGetUserRepos() {
-        List<String> userRepos = jerseyClient.getUserRepos("GeehomThor");
+        List<String> userRepos = jerseyClient.getUserRepos("GheeyomThor");
         assertTrue(userRepos.contains("dijkstraatrest"));
     }
 
-    @Test
+    @Ignore
     public void testGetRepoContributors() {
-        List<String> userRepos = jerseyClient.getRepoContributors("GeehomThor", "dijkstraatrest");
-        assertTrue(userRepos.contains("GeehomThor") && userRepos.size() == 1);
+        List<String> userRepos = jerseyClient.getRepoContributors("GheeyomThor", "dijkstraatrest");
+        assertTrue(userRepos.contains("GheeyomThor") && userRepos.size() == 1);
     }
 
 }

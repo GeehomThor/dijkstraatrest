@@ -1,7 +1,7 @@
-package com.github.dijkstra.apiresources;
+package com.github.dijkstra.resources;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.Optional;
 
@@ -21,7 +21,11 @@ public class GithubContributionsPathResourceTest extends JerseyTest {
 
         @Override
         public ContributionPath shortestContributionsPath(String user1, String user2) {
-            return new ContributionPath(Optional.of(12));
+            if (user1.equals("u1") && user2.equals("u2")) {
+                return new ContributionPath(Optional.of(12));
+            } else {
+                return new ContributionPath(Optional.empty());
+            }
         }
 
     }
@@ -38,14 +42,19 @@ public class GithubContributionsPathResourceTest extends JerseyTest {
         return resourceConfig;
     }
 
-    /**
-     * Test to see that the message "Got it!" is sent in the response.
-     */
     @Test
-    public void testGetIt() {
-        ContributionPath responseMsg = target().path("githubcontributionpath/shortest").request()
-                .get(ContributionPath.class);
+    public void testValidGet() {
+        ContributionPath responseMsg = target().path("shortest").queryParam("user1", "u1").queryParam("user2", "u2")
+                .request().get(ContributionPath.class);
         assertTrue(responseMsg.getContributionPathLength().isPresent());
         assertEquals(12, responseMsg.getContributionPathLength().get().intValue());
+    }
+
+    @Test
+    public void testInvalidGet() {
+        ContributionPath responseMsg = target().path("shortest").queryParam("user1", "u3").queryParam("user2", "u4")
+                .request().get(ContributionPath.class);
+        assertFalse(responseMsg.getContributionPathLength().isPresent());
+
     }
 }
