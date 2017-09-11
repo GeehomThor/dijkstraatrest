@@ -34,7 +34,6 @@ public class GraphStrollerTest {
         GraphStrollerBuilder builder = GraphStrollerBuilder.getInstance().with(jerseyClientProxy);
         GraphStroller stroller = builder.build();
 
-        // When
         when(jerseyClientProxy.getUserRepos("user1")).thenReturn(Arrays.asList(new String[] { "repository1" }));
         when(jerseyClientProxy.getUserRepos("user2"))
                 .thenReturn(Arrays.asList(new String[] { "repository1", "repository2" }));
@@ -49,6 +48,7 @@ public class GraphStrollerTest {
         when(jerseyClientProxy.getRepoContributors("user3", "repository2"))
                 .thenReturn(Arrays.asList(new String[] { "user2", "user3" }));
 
+        // When
         Optional<Integer> pathLength = stroller.stroll("user1", "user3");
 
         // Then
@@ -64,7 +64,6 @@ public class GraphStrollerTest {
         GraphStrollerBuilder builder = GraphStrollerBuilder.getInstance().with(jerseyClientProxy);
         GraphStroller stroller = builder.build();
 
-        // When
         when(jerseyClientProxy.getUserRepos("user1")).thenReturn(Arrays.asList(new String[] { "repository1" }));
         when(jerseyClientProxy.getUserRepos("user2"))
                 .thenReturn(Arrays.asList(new String[] { "repository1", "repository2" }));
@@ -85,6 +84,7 @@ public class GraphStrollerTest {
         when(jerseyClientProxy.getRepoContributors("user4", "repository3"))
                 .thenReturn(Arrays.asList(new String[] { "user3", "user4" }));
 
+        // When
         Optional<Integer> pathLength = stroller.stroll("user1", "user4");
 
         // Then
@@ -100,7 +100,6 @@ public class GraphStrollerTest {
         GraphStrollerBuilder builder = GraphStrollerBuilder.getInstance().with(jerseyClientProxy);
         GraphStroller stroller = builder.build();
 
-        // When
         when(jerseyClientProxy.getUserRepos("user1")).thenReturn(Arrays.asList(new String[] { "repository1" }));
         when(jerseyClientProxy.getUserRepos("user2"))
                 .thenReturn(Arrays.asList(new String[] { "repository1", "repository2" }));
@@ -124,6 +123,7 @@ public class GraphStrollerTest {
         when(jerseyClientProxy.getRepoContributors("user4", "repository3"))
                 .thenReturn(Arrays.asList(new String[] { "user3", "user4" }));
 
+        // When
         Optional<Integer> pathLength = stroller.stroll("user1", "user4");
 
         // Then
@@ -139,7 +139,6 @@ public class GraphStrollerTest {
         GraphStrollerBuilder builder = GraphStrollerBuilder.getInstance().with(jerseyClientProxy);
         GraphStroller stroller = builder.build();
 
-        // When
         when(jerseyClientProxy.getUserRepos("user1")).thenReturn(Arrays.asList(new String[] { "repository1" }));
         when(jerseyClientProxy.getUserRepos("user2"))
                 .thenReturn(Arrays.asList(new String[] { "repository1", "repository2" }));
@@ -163,6 +162,7 @@ public class GraphStrollerTest {
         when(jerseyClientProxy.getRepoContributors("user4", "repository3"))
                 .thenReturn(Arrays.asList(new String[] { "user3", "user4" }));
 
+        // When
         Optional<Integer> pathLength = stroller.stroll("user1", "user1");
 
         // Then
@@ -178,7 +178,6 @@ public class GraphStrollerTest {
         GraphStrollerBuilder builder = GraphStrollerBuilder.getInstance().with(jerseyClientProxy);
         GraphStroller stroller = builder.build();
 
-        // When
         when(jerseyClientProxy.getUserRepos("user1")).thenReturn(Arrays.asList(new String[] { "repository1" }));
         when(jerseyClientProxy.getUserRepos("user2"))
                 .thenReturn(Arrays.asList(new String[] { "repository1", "repository2" }));
@@ -198,6 +197,7 @@ public class GraphStrollerTest {
         when(jerseyClientProxy.getRepoContributors("user4", "repository4"))
                 .thenReturn(Arrays.asList(new String[] { "user4" }));
 
+        // When
         Optional<Integer> pathLength = stroller.stroll("user1", "user4");
 
         // Then
