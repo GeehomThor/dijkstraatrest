@@ -10,4 +10,5 @@ When User1 contributes to repository1, User2 contributed to repository1 and repo
 Then the shortest path between User1 and User3 will equal 2 and it will go through repository1 and repository2.
 
 The application is set to run on port 9090 (from the pom.xml)
+
 We can run the application locally by simply running : mvn clean package jetty:run
