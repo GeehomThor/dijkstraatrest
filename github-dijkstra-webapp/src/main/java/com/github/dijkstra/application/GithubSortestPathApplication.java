@@ -17,7 +17,7 @@ import com.github.dijkstra.service.impl.GithubShortestPathSolver;
 /*
  * IOC registration
  */
-@ApplicationPath("githubshortestpath")
+//@ApplicationPath("githubshortestpath") //left commented out in the benefit of the web.xml setup
 public class GithubSortestPathApplication extends ResourceConfig {
 
     public GithubSortestPathApplication() {

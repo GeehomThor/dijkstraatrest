@@ -53,7 +53,7 @@ public class GithubJerseyClientProxy implements JerseyClientProxy {
     public List<String> getUserRepos(String user) {
 
         if (hasReachedQueryLimit(user))
-            throw new RuntimeIOException("Github query limit exceeded");
+            throw new RuntimeException("Github query limit exceeded");
 
         JsonArray response = client.target(String.format("https://api.github.com/users/%s/repos", user)).request()
                 .get(JsonArray.class);
@@ -67,7 +67,7 @@ public class GithubJerseyClientProxy implements JerseyClientProxy {
     public List<String> getRepoContributors(String user, String repo) {
 
         if (hasReachedQueryLimit(user))
-            throw new RuntimeIOException("Github query limit exceeded");
+            throw new RuntimeException("Github query limit exceeded");
 
         JsonArray response = client.target(String.format("https://api.github.com/repos/%s/%s/contributors", user, repo))
                 .request().get(JsonArray.class);

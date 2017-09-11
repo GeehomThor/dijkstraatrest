@@ -40,7 +40,7 @@ public class GithubJerseyClientProxyRateLimitTest {
         GithubJerseyClientProxy jerseyClientProxy = new GithubJerseyClientProxy(jerseyClient);
         MultivaluedMap<String, Object> responseHeaders = new MultivaluedHashMap<>();
         responseHeaders.add("X-RateLimit-Limit", 60);
-        responseHeaders.add("X-RateLimit-Remaining", 31);
+        responseHeaders.add("X-RateLimit-Remaining", 16);
 
         when(response.getHeaders()).thenReturn(responseHeaders);
         when(requestBuilder.get()).thenReturn(response);
@@ -66,7 +66,7 @@ public class GithubJerseyClientProxyRateLimitTest {
         GithubJerseyClientProxy jerseyClientProxy = new GithubJerseyClientProxy(jerseyClient);
         MultivaluedMap<String, Object> responseHeaders = new MultivaluedHashMap<>();
         responseHeaders.add("X-RateLimit-Limit", 60);
-        responseHeaders.add("X-RateLimit-Remaining", 32);
+        responseHeaders.add("X-RateLimit-Remaining", 17);
 
         when(response.getHeaders()).thenReturn(responseHeaders);
         when(requestBuilder.get()).thenReturn(response);

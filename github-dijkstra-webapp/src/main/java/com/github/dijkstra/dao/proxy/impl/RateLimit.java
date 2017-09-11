@@ -16,7 +16,7 @@ public class RateLimit {
     }
 
     public boolean isToBeBlocked() {
-        return (remaining * 100) / limit < 50;
+        return (remaining * 100) / limit < 25;
     }
 
 }
