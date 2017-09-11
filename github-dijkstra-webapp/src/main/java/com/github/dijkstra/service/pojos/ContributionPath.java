@@ -1,4 +1,4 @@
-package com.github.dijkstra.algorithmic.pojos;
+package com.github.dijkstra.service.pojos;
 
 import java.util.Optional;
 
@@ -8,6 +8,7 @@ public class ContributionPath {
 
     public ContributionPath() {
         super();
+        this.contributionPathLength = Optional.empty();
     }
 
     public ContributionPath(Optional<Integer> contributionPathLength) {

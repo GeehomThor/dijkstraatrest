@@ -1,4 +1,4 @@
-package com.github.dijkstra.dao.proxy;
+package com.github.dijkstra.dao.proxy.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import javax.json.JsonArray;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+
+import com.github.dijkstra.dao.proxy.JerseyClientProxy;
 
 // TODO Add some caching capabilities
 public class GithubJerseyClientProxy implements JerseyClientProxy {

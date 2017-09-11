@@ -5,26 +5,29 @@ import java.util.Set;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import com.github.dijkstra.algorithmic.ContributionPathSolver;
-import com.github.dijkstra.algorithmic.impl.GithubContributionPathSolver;
+import com.github.dijkstra.service.ShortestPathSolver;
+import com.github.dijkstra.service.impl.GithubShortestPathSolver;
 
-public class CurveTestApplication extends ResourceConfig {
+/*
+ * IOC registration
+ */
+public class GithubSortestPathApplication extends ResourceConfig {
 
-    public CurveTestApplication() {
+    public GithubSortestPathApplication() {
         registerBinder();
     }
 
-    public CurveTestApplication(Class<?>... classes) {
+    public GithubSortestPathApplication(Class<?>... classes) {
         super(classes);
         registerBinder();
     }
 
-    public CurveTestApplication(ResourceConfig original) {
+    public GithubSortestPathApplication(ResourceConfig original) {
         super(original);
         registerBinder();
     }
 
-    public CurveTestApplication(Set<Class<?>> classes) {
+    public GithubSortestPathApplication(Set<Class<?>> classes) {
         super(classes);
         registerBinder();
     }
@@ -33,7 +36,7 @@ public class CurveTestApplication extends ResourceConfig {
         register(new AbstractBinder() {
             @Override
             protected void configure() {
-                bind(GithubContributionPathSolver.class).to(ContributionPathSolver.class);
+                bind(GithubShortestPathSolver.class).to(ShortestPathSolver.class);
             }
         });
     }

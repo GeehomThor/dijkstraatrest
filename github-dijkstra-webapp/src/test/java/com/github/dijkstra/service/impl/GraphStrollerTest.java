@@ -1,4 +1,4 @@
-package com.github.dijkstra.algorithmic.impl;
+package com.github.dijkstra.service.impl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -12,8 +12,8 @@ import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.dijkstra.algorithmic.impl.builders.GraphStrollerBuilder;
 import com.github.dijkstra.dao.proxy.JerseyClientProxy;
+import com.github.dijkstra.service.impl.builders.GraphStrollerBuilder;
 
 //Additional test are need : to the limit and also with larger set of data
 public class GraphStrollerTest {

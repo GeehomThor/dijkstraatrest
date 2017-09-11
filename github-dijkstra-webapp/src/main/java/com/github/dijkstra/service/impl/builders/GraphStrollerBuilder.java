@@ -1,7 +1,7 @@
-package com.github.dijkstra.algorithmic.impl.builders;
+package com.github.dijkstra.service.impl.builders;
 
-import com.github.dijkstra.algorithmic.impl.GraphStroller;
 import com.github.dijkstra.dao.proxy.JerseyClientProxy;
+import com.github.dijkstra.service.impl.GraphStroller;
 
 public class GraphStrollerBuilder {
 

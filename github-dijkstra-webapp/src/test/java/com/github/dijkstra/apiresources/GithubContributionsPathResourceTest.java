@@ -1,4 +1,4 @@
-package com.github.dijkstra.resources;
+package com.github.dijkstra.apiresources;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -12,13 +12,12 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
 
-import com.github.dijkstra.algorithmic.ContributionPathSolver;
-import com.github.dijkstra.algorithmic.pojos.ContributionPath;
-import com.github.dijkstra.apiresources.GithubContributionsPathResource;
+import com.github.dijkstra.service.ShortestPathSolver;
+import com.github.dijkstra.service.pojos.ContributionPath;
 
 public class GithubContributionsPathResourceTest extends JerseyTest {
 
-    private static class MockContributionPathSolver implements ContributionPathSolver {
+    private static class MockContributionPathSolver implements ShortestPathSolver {
 
         @Override
         public ContributionPath shortestContributionsPath(String user1, String user2) {
@@ -29,11 +28,11 @@ public class GithubContributionsPathResourceTest extends JerseyTest {
 
     @Override
     protected Application configure() {
-        ResourceConfig resourceConfig = new ResourceConfig(GithubContributionsPathResource.class);
+        ResourceConfig resourceConfig = new ResourceConfig(GithubSortestPathResource.class);
         resourceConfig.register(new AbstractBinder() {
             @Override
             protected void configure() {
-                bind(MockContributionPathSolver.class).to(ContributionPathSolver.class);
+                bind(MockContributionPathSolver.class).to(ShortestPathSolver.class);
             }
         });
         return resourceConfig;

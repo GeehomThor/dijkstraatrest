@@ -3,11 +3,11 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.curve.test</groupId>
-    <artifactId>curve-webapp</artifactId>
+    <groupId>com.github.dijkstra</groupId>
+    <artifactId>github-dijkstra-webapp</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>curve-webapp</name>
+    <name>github-dijkstra-webapp</name>
 
     <dependencyManagement>
         <dependencies>
@@ -69,7 +69,7 @@
     </dependencies>
 
     <build>
-        <finalName>curve-webapp</finalName>
+        <finalName>github-dijkstra-webapp</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
