@@ -43,7 +43,7 @@ public class GithubContributionsPathResourceTest extends JerseyTest {
      */
     @Test
     public void testGetIt() {
-        ContributionPath responseMsg = target().path("contributionspath/shortest").request()
+        ContributionPath responseMsg = target().path("githubcontributionpath/shortest").request()
                 .get(ContributionPath.class);
         assertTrue(responseMsg.getContributionPathLength().isPresent());
         assertEquals(12, responseMsg.getContributionPathLength().get().intValue());
